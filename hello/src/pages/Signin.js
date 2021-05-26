@@ -38,7 +38,9 @@ const SigninPage = (props) => {
           onChange={(e) => setPassword(e.target.value)}
         /> */}
         <div className="btnContainer">
-          <button onClick={handleSignup}>Sign In with Google</button>
+          <button className="googleButton" onClick={handleSignup}>
+            Sign In with Google
+          </button>
         </div>
       </div>
     </section>
