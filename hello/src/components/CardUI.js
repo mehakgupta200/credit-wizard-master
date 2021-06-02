@@ -5,10 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./card-style.css";
 import Form from "react-bootstrap/Form";
 
-
 export default function Card(props) {
   const { item, auth, getCustomers } = props;
   const [bal, setBal] = useState();
+  console.log("me");
   const [paidAmount, setPaidAmount] = useState(item.amount_paid);
   console.log("item and aurt and getCustomers", item, auth, getCustomers);
 
@@ -38,8 +38,8 @@ export default function Card(props) {
       } else if (response?.data?.update_customers_by_pk) {
         console.log("in update if ", response);
         // calculateBalance(value);
-          window.location.reload(false);
-           }
+        window.location.reload(false);
+      }
       return response;
     } catch (error) {
       console.log("Error?????", error);
