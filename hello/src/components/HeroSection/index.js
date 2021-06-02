@@ -17,7 +17,7 @@ const HeroSection = () => {
       <HeroContent>
         <HeroH1>Bussiness Hua Easy!</HeroH1>
         <HeroP>
-          Sign up for a new account today and recieve a voucher of amazon Rs.100.
+          DIGITAL LEDGER
         </HeroP>
         <HeroBtnWrapper>
             <Button to="signup" onMouseEnter={onHover} onMouseLeave={onHover}

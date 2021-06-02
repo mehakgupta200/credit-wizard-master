@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import firebase from "../firebase";
+import Navbar from '../components/NavBar'
 
 const SigninPage = (props) => {
   const [email, setEmail] = useState("");
@@ -19,24 +20,9 @@ const SigninPage = (props) => {
   };
 
   return (
+    <>
     <section className="login">
       <div className="loginContainer">
-        {/* <label>Username</label>
-        <input
-          type="text"
-          required
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label>Password</label>
-        <input
-          type="password"
-          required
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        /> */}
         <div className="btnContainer">
           <button className="googleButton" onClick={handleSignup}>
             Sign In with Google
@@ -44,6 +30,7 @@ const SigninPage = (props) => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

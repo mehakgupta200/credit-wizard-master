@@ -60,6 +60,7 @@ balance
   }
 
   async function enterCustomer() {
+    handleClose();
     console.log("mehekk1");
     let balance = credit - paid;
     const ADD_CUSTOMER = `mutation{
@@ -98,6 +99,7 @@ balance
         console.log("in if ", response);
         // setCustomerArray(response.data.customers);
       }
+      window.location.reload(false);
       return response;
     } catch (error) {
       console.log("Error?????", error);
@@ -135,7 +137,7 @@ balance
             <div className="row">
               {customerArray.length !== 0 &&
                 customerArray.map((item) => (
-                  <div className="col-md-6">
+                  <div className="col">
                     <Card item={item} auth={auth} getCustomers={getCustomers} />
                   </div>
                 ))}
@@ -200,7 +202,7 @@ balance
                   </Form.Group>
                   <Form.Group>
                     <Button
-                      type="submit"
+                      // type="submit"
                       onClick={() => {
                         console.log("hewwo uwu");
                         enterCustomer();

@@ -4,10 +4,12 @@ import { useAuth } from "../auth";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./card-style.css";
 import Form from "react-bootstrap/Form";
+
+
 export default function Card(props) {
-  const [paidAmount, setPaidAmount] = useState();
   const { item, auth, getCustomers } = props;
   const [bal, setBal] = useState();
+  const [paidAmount, setPaidAmount] = useState(item.amount_paid);
   console.log("item and aurt and getCustomers", item, auth, getCustomers);
 
   async function updateCustomer(value) {
@@ -36,16 +38,17 @@ export default function Card(props) {
       } else if (response?.data?.update_customers_by_pk) {
         console.log("in update if ", response);
         // calculateBalance(value);
-        getCustomers();
-      }
+          window.location.reload(false);
+           }
       return response;
     } catch (error) {
       console.log("Error?????", error);
       return { error: error };
     }
   }
+
   return (
-    <div className="card text-center">
+    <div className="card">
       <div className="card-body text-dark">
         <Form>
           <Form.Group>
