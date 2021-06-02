@@ -117,7 +117,7 @@ export default function Card(props) {
         </button>
         <button
           type="button"
-          class="btn btn-outline-success"
+          class="btn btn-outline-danger"
           onClick={() => {
             // console.log("delete button");
             deleteCustomer();
