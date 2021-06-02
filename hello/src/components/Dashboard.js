@@ -128,7 +128,7 @@ balance
 
   useEffect(() => {
     if (auth && auth.user) {
-      console.log("unique sa");
+      console.log("unique sa", auth.user, auth.user.displayName);
       getCustomers();
     }
   }, [auth, change]);
@@ -148,7 +148,9 @@ balance
                   className="home-hero justify-content-center"
                   style={{ padding: 40 }}
                 >
-                  <h1 className="text-center">Welcome Mehak</h1>
+                  <h1 className="text-center">
+                    Welcome {auth.user.displayName}
+                  </h1>
                 </div>
               </Col>
             </Row>
