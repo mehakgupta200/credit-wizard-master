@@ -89,6 +89,15 @@ export default function Card(props) {
         >
           Add Transaction
         </button>
+        <button
+          type="button"
+          class="btn btn-outline-success"
+          onClick={() => {
+            console.log("paidAmount", paidAmount);
+          }}
+        >
+          Delete Customer
+        </button>
       </div>
     </div>
   );
