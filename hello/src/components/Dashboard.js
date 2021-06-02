@@ -47,7 +47,7 @@ export default function Dashboard(props) {
 
   async function getCustomers() {
     const GET_CUSTOMERS = `query{
-      customers(where:{merchant_id:{_eq:"${auth.idToken}"}}){
+      customers(where:{merchant_email:{_eq:"${auth.user.email}"}}){
         id
         name
         email
@@ -55,6 +55,7 @@ export default function Dashboard(props) {
         amount_paid
         is_completed
         merchant_id
+        merchant_email
 balance
       }
     }`;
@@ -92,6 +93,7 @@ balance
         is_completed:false,
         merchant_id:"${auth.idToken}",
         balance:${balance}
+        merchant_email:"${auth.user.email}"
       }
     ) {
       id
