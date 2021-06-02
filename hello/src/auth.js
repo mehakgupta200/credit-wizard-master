@@ -37,7 +37,8 @@ function useProvideAuth() {
       .then(() => {
         setUserY(false);
         console.log("logged out");
-        history.push("/");
+        window.location.reload(false);
+        // history.push("/");
       });
   };
   const refreshToken = () => {

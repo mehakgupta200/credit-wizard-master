@@ -11,10 +11,13 @@ import {
   NavLinks,
   NavBtn,
   NavBtnLink,
+  NavBtnLinkTwo,
 } from "./NavbarElements";
+import { useAuth } from "../../auth";
 
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
+  const auth = useAuth();
 
   const changeNav = () => {
     if (window.scrollY >= 80) {
@@ -78,22 +81,30 @@ const Navbar = ({ toggle }) => {
               Services
             </NavLinks>
           </NavItem>
-          <NavItem>
-            <NavLinks
-              to="signup"
-              smooth={true}
-              duration={500}
-              spy={true}
-              exact="true"
-              offset={-80}
-            >
-              Sign Up
-            </NavLinks>
-          </NavItem>
+          {auth && auth.idToken && (
+            <NavItem>
+              <NavBtnLinkTwo to="/dashboard">Dashboard</NavBtnLinkTwo>
+            </NavItem>
+          )}
         </NavMenu>
-        <NavBtn>
-          <NavBtnLink to="/signin">Sign In</NavBtnLink>
-        </NavBtn>
+        {auth && auth.idToken ? (
+          <NavBtn>
+            <NavBtnLink
+              to="/"
+              onClick={() => {
+                auth.signout();
+                // window.location.reload(false);
+                console.log("sign out", auth);
+              }}
+            >
+              Sign Out
+            </NavBtnLink>
+          </NavBtn>
+        ) : (
+          <NavBtn>
+            <NavBtnLink to="/signin">Sign In</NavBtnLink>
+          </NavBtn>
+        )}
       </NavbarContainer>
     </Nav>
   );
