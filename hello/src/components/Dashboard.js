@@ -11,8 +11,27 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Sidebar from "../components/Sidebar";
+import {
+  Nav,
+  NavbarContainer,
+  NavLogo,
+  MobileIcon,
+  NavMenu,
+  NavItem,
+  NavLinks,
+  NavBtn,
+  NavBtnLink,
+  NavBtnLinkTwo,
+} from "../components/NavBar/NavbarElements";
+import { Navbar } from "react-bootstrap";
 
 export default function Dashboard(props) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   const [change, setChange] = useState(false);
   const auth = useAuth();
   console.log("dashboard auth", auth);
@@ -120,7 +139,8 @@ balance
     <>
       {auth && auth.idToken ? (
         <>
-          {" "}
+          <Sidebar isOpen={isOpen} toggle={toggle} />
+          <Navbar toggle={toggle} />
           <div>
             <Row>
               <Col md={6}>
