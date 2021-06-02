@@ -202,7 +202,6 @@ balance
                   </Form.Group>
                   <Form.Group>
                     <Button
-                      // type="submit"
                       onClick={() => {
                         console.log("hewwo uwu");
                         enterCustomer();
