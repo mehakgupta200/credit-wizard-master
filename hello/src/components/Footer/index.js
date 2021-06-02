@@ -74,8 +74,8 @@ const Footer = () => {
         <SocialMedia>
             <SocialMediaWrap>
                 <SocialLogo to="/" onClick={toggleHome}>CreditWizzard</SocialLogo>
-                <WebsiteRight>CreditWizzard . {new Date().getFullYear()}
-                All rights reserved.</WebsiteRight>
+                <WebsiteRight>CreditWizzard © {new Date().getFullYear()}
+                 All rights reserved.</WebsiteRight>
                 {/* <SocialIcons>
                     <SocialIconLink href="/" target="_blank" aria-label="Facebook">
                         <FaFacebook />

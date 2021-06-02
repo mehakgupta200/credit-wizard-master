@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import firebase from "../firebase";
 import Navbar from '../components/NavBar'
+import { Button } from "../components/ButtonElement";
 
 const SigninPage = (props) => {
   const [email, setEmail] = useState("");
@@ -24,9 +25,9 @@ const SigninPage = (props) => {
     <section className="login">
       <div className="loginContainer">
         <div className="btnContainer">
-          <button className="googleButton" onClick={handleSignup}>
+          <Button onClick={handleSignup}>
             Sign In with Google
-          </button>
+          </Button>
         </div>
       </div>
     </section>
