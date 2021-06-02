@@ -12,6 +12,32 @@ export default function Card(props) {
   const [paidAmount, setPaidAmount] = useState(item.amount_paid);
   console.log("item and aurt and getCustomers", item, auth, getCustomers);
 
+  async function deleteCustomer() {
+    const DELETE_CUSTOMER = `mutation{
+      delete_customers_by_pk(id:${item.id}){
+        id
+        name
+        email
+      }
+    }`;
+
+    try {
+      const response = await sendAxiosHit(DELETE_CUSTOMER, auth.idToken);
+      console.log("user deets for delete", response, item);
+      if (response.errors && response.errors.length !== 0) {
+        console.log("error", response);
+      } else if (response?.data?.delete_customers_by_pk) {
+        console.log("in delete if ", response);
+        // calculateBalance(value);
+        window.location.reload(false);
+      }
+      return response;
+    } catch (error) {
+      console.log("Error?????", error);
+      return { error: error };
+    }
+  }
+
   async function updateCustomer(value) {
     const UPDATE_CUSTOMER = `mutation{
         update_customers_by_pk(
@@ -93,7 +119,8 @@ export default function Card(props) {
           type="button"
           class="btn btn-outline-success"
           onClick={() => {
-            console.log("paidAmount", paidAmount);
+            // console.log("delete button");
+            deleteCustomer();
           }}
         >
           Delete Customer
