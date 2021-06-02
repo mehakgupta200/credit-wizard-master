@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { animateScroll as scroll } from "react-scroll";
 import {
   FooterContainer,
   FooterWrap,
@@ -20,11 +21,18 @@ import {
 
 
 const Footer = () => {
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
+
+
+
+
   return (
     <FooterContainer>
       <FooterWrap>
         <FooterLinksContainer>
-          <FooterLinksWrapper>
+          {/* <FooterLinksWrapper>
             <FooterLinkItems>
               <FooterLinkTitle>About Us</FooterLinkTitle>
 
@@ -61,14 +69,14 @@ const Footer = () => {
               <FooterLink to="/">Twitter</FooterLink>
               
             </FooterLinkItems>
-          </FooterLinksWrapper>
+          </FooterLinksWrapper> */}
         </FooterLinksContainer>
         <SocialMedia>
             <SocialMediaWrap>
-                <SocialLogo to="/">CreditWizzard</SocialLogo>
+                <SocialLogo to="/" onClick={toggleHome}>CreditWizzard</SocialLogo>
                 <WebsiteRight>CreditWizzard . {new Date().getFullYear()}
                 All rights reserved.</WebsiteRight>
-                <SocialIcons>
+                {/* <SocialIcons>
                     <SocialIconLink href="/" target="_blank" aria-label="Facebook">
                         <FaFacebook />
                     </SocialIconLink>
@@ -81,7 +89,7 @@ const Footer = () => {
                     <SocialIconLink href="/" target="_blank" aria-label="Twitter">
                         <FaTwitter />
                     </SocialIconLink>
-                </SocialIcons>
+                </SocialIcons> */}
             </SocialMediaWrap>
         </SocialMedia>
       </FooterWrap>

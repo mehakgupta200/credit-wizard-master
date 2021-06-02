@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../ButtonElement";
-import images from "../../images/img1.png";
+
 
 import {
   InfoContainer,
@@ -45,6 +45,7 @@ const InfoSection = ({
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button
+                    // to="home"
                     to="home"
                     smooth={true}
                     duration={500}
@@ -62,7 +63,7 @@ const InfoSection = ({
             </Column1>
             <Column2>
               <ImgWrap>
-                <Img src={images} alt={alt} />
+                <Img src={img} alt={alt} />
               </ImgWrap>
             </Column2>
           </InfoRow>

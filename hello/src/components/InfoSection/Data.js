@@ -1,5 +1,6 @@
-// import images from "../../images/img1.png";
-
+import img1 from "../../images/img1.png";
+import img2 from "../../images/img2.png";
+import img3 from "../../images/img3.png";
 export const homeObjOne ={
     id:'about',
     lightBg:false,
@@ -10,7 +11,7 @@ export const homeObjOne ={
     description:'gdfdsfjhgsjhgsdfjgsfgfsdgfjbfsdjgfdsjgjdsfgfsj.',
     buttonLabel:'Get started',
     imgStart:false,
-    img: require('../../images/img7.svg'),
+    img:img1,
     // img:{images},
     alt:'Car',
     dark:true, 
@@ -23,12 +24,12 @@ export const homeObjTwo ={
     lightBg:true,
     lightText:false,
     lightTextDesc:false,
-    topLine:'Unlimited Access',
-    headline:'Unlimited Transaction with zero fees',
-    description:'gdfdsfjhgsjhgsdfjgsfgfsdgfjbfsdjgfdsjgjdsfgfsj.',
+    topLine:'Discover',
+    headline:'Helpfull for the bussinesses',
+    description:'An app in which you can add your customer ,delete your customer. Make a great  check on the credit and cost paid by the customer.This will very helpful to manage your bussiness',
     buttonLabel:'Learn More',
     imgStart:true,
-    img: require('../../images/img2.png'),
+    img: img2,
     alt:'Piggybank',
     dark:false, 
     primary:false,
@@ -45,7 +46,7 @@ export const homeObjThree ={
     description:'gdfdsfjhgsjhgsdfjgsfgfsdgfjbfsdjgfdsjgjdsfgfsj.',
     buttonLabel:'Start Now',
     imgStart:false,
-    img: require('../../images/img3.png'),
+    img: img3,
     alt:'Papers',
     dark:false, 
     primary:false,
