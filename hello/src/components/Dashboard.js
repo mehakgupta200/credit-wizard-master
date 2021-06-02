@@ -47,7 +47,7 @@ export default function Dashboard(props) {
 
   async function getCustomers() {
     const GET_CUSTOMERS = `query{
-      customers{
+      customers(where:{merchant_id:{_eq:"${auth.idToken}"}}){
         id
         name
         email
@@ -128,7 +128,7 @@ balance
 
   useEffect(() => {
     if (auth && auth.user) {
-      console.log("unique sa", auth.user, auth.user.displayName);
+      // console.log("unique sa", auth.user, auth?.user?.displayName);
       getCustomers();
     }
   }, [auth, change]);
@@ -137,7 +137,7 @@ balance
 
   return (
     <>
-      {auth && auth.idToken ? (
+      {auth && auth.idToken && auth.user ? (
         <>
           <Sidebar isOpen={isOpen} toggle={toggle} />
           <Navbar toggle={toggle} />
