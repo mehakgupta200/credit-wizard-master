@@ -24,7 +24,8 @@ import {
   NavBtnLink,
   NavBtnLinkTwo,
 } from "../components/NavBar/NavbarElements";
-import { Navbar } from "react-bootstrap";
+import Navbar from "../components/NavBar/index";
+// import { Navbar } from "react-bootstrap";
 
 export default function Dashboard(props) {
   const [isOpen, setIsOpen] = useState(false);
